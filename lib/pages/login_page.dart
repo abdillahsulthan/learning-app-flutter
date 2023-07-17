@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:learning_app/widgets/login_button.dart';
 
 class LoginPage extends StatelessWidget {
@@ -9,14 +8,13 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Login',
-          style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
+          style: TextStyle(
             color: Colors.black,
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.bold,
             fontSize: 20,
-          )),
+          ),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -28,33 +26,29 @@ class LoginPage extends StatelessWidget {
             Column(
               children: [
                 Image.asset(
-                  'assets/login-image.png',
+                  'assets/images/login-image.png',
                   width: 360,
                   height: 255,
                 ),
               ],
             ),
-            Column(
+            const Column(
               children: [
                 Text(
                   'Selamat Datang',
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 22,
-                      letterSpacing: 2,
-                    ),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 22,
+                    letterSpacing: 2,
                   ),
                 ),
                 Text(
                   'Selamat Datang di Aplikasi Widya Edu \n Aplikasi Latihan dan Konsultasi Soal',
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey,
-                      letterSpacing: 1,
-                    ),
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.grey,
+                    letterSpacing: 1,
                   ),
                 ),
               ],
@@ -65,12 +59,12 @@ class LoginPage extends StatelessWidget {
             const Column(
               children: [
                 LoginButton(
-                    asset: 'assets/google-logo.png',
+                    asset: 'assets/images/google-logo.png',
                     text: 'Masuk dengan Google',
                     backgroundColor: Colors.white),
                 SizedBox(height: 25),
                 LoginButton(
-                    asset: 'assets/apple-logo.png',
+                    asset: 'assets/images/apple-logo.png',
                     text: 'Masuk dengan Apple ID',
                     backgroundColor: Colors.black),
               ],

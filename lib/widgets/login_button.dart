@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:learning_app/pages/about_page.dart';
 
 class LoginButton extends StatelessWidget {
   final String asset;
@@ -13,8 +14,14 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isGoogle = backgroundColor == Colors.white ? true : false;
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        if (isGoogle) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const AboutPage()));
+        }
+      },
       style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
           shape: StadiumBorder(

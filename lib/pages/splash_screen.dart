@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:learning_app/page/login_page.dart';
+import 'package:learning_app/pages/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Colors.blue,
       body: Center(
         child: Image.asset(
-          'assets/edspert-logo.png',
+          'assets/images/edspert-logo.png',
           width: 159,
           height: 30,
         ),
