@@ -68,6 +68,15 @@ flutter:
     - assets/images/login-image.png
     - assets/images/profile-image.jpg
     - assets/images/about-picture.png
+    - assets/images/css.png
+    - assets/images/dart.png
+    - assets/images/django.png
+    - assets/images/flutter.png
+    - assets/images/github.png
+    - assets/images/html5.png
+    - assets/images/javascript.png
+    - assets/images/python.png
+    - assets/images/ngetech-logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

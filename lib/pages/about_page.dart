@@ -10,6 +10,7 @@ class AboutPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: <Widget>[
@@ -107,16 +108,107 @@ class AboutPage extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(20),
                     child: const Text(
-                      'Enthusiastic and dedicated Undergraduate Information System Student at University of Indonesia with a passion for technology. Seeking opportunities to apply theoretical knowledge, expand practical skills, and contribute to real-world mobile development projects.',
-                      style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                      ),
+                      'Enthusiastic and dedicated Undergraduate Information System Student at University of Indonesia with a passion for technology',
                       textAlign: TextAlign.justify,
                     ),
                   ),
                 ),
               ],
-            )
+            ),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(25, 16, 25, 12),
+              child: Text(
+                'Project',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              child: Card(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Image.asset('assets/images/ngetech-logo.png'),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            const Text(
+                              'Ngetech App',
+                              style: TextStyle(
+                                  fontSize: 16.0, fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            const Text(
+                              'Web and Mobile applications related to today\'s technology',
+                              style: TextStyle(
+                                fontSize: 12,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              padding: const EdgeInsets.all(2),
+                              child: Row(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/html5.png',
+                                    width: 25,
+                                  ),
+                                  Image.asset(
+                                    'assets/images/css.png',
+                                    width: 25,
+                                  ),
+                                  Image.asset(
+                                    'assets/images/django.png',
+                                    width: 25,
+                                  ),
+                                  Image.asset(
+                                    'assets/images/javascript.png',
+                                    width: 25,
+                                  ),
+                                  Image.asset(
+                                    'assets/images/python.png',
+                                    width: 25,
+                                  ),
+                                  Image.asset(
+                                    'assets/images/flutter.png',
+                                    width: 25,
+                                  ),
+                                  Image.asset(
+                                    'assets/images/dart.png',
+                                    width: 25,
+                                  ),
+                                  Image.asset(
+                                    'assets/images/github.png',
+                                    width: 25,
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
