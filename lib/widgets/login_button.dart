@@ -1,58 +1,68 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:learning_app/pages/about_page.dart';
 
 class LoginButton extends StatelessWidget {
-  final String asset;
+  final String imageAsset;
   final String text;
   final Color backgroundColor;
-  const LoginButton(
-      {super.key,
-      required this.asset,
-      required this.text,
-      required this.backgroundColor});
+  final Color textColor;
+  final Color borderColor;
+  final VoidCallback onTap;
+
+  const LoginButton({
+    super.key,
+    required this.imageAsset,
+    required this.text,
+    required this.backgroundColor,
+    required this.textColor,
+    required this.borderColor,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    bool isGoogle = backgroundColor == Colors.white ? true : false;
-    return ElevatedButton(
-      onPressed: () {
-        if (isGoogle) {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const AboutPage()));
-        }
-      },
-      style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor,
-          shape: StadiumBorder(
-              side: BorderSide(
-                  color: backgroundColor == Colors.white
-                      ? Colors.lightBlueAccent
-                      : Colors.transparent)),
-          padding: const EdgeInsets.all(20),
-          fixedSize: const Size(300, 60)),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Image.asset(
-            asset,
-            width: 26,
-            height: 26,
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(30),
+      child: Ink(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 32),
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          borderRadius: BorderRadius.circular(30),
+          border: Border.all(
+            color: borderColor,
           ),
-          const SizedBox(width: 8),
-          Text(
-            text,
-            style: GoogleFonts.roboto(
-              textStyle: TextStyle(
+          boxShadow: [
+            BoxShadow(
+              offset: const Offset(0, 18),
+              blurRadius: 40,
+              spreadRadius: 0,
+              color: Colors.black.withOpacity(0.1496),
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              imageAsset,
+              width: 26,
+              height: 26,
+            ),
+            const SizedBox(
+              width: 12,
+            ),
+            Text(
+              text,
+              style: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.w500,
-                color: backgroundColor == Colors.black
-                    ? Colors.white
-                    : Colors.black,
+                fontFamily: 'Roboto',
+                color: textColor,
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
